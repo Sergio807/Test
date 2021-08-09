@@ -64,8 +64,8 @@ public class AccuweatherModel {
                 .build();
         Response response = okHttpClient.newCall(request).execute();
         String responseString = response.body().string();
-        System.out.println(responseString);
-        return responseString;
+        String cityKey = objectMapper.readTree(responseString).get(0).at("/Key").asText();
+        return cityKey;
 
 
        // http://dataservice.accuweather.com/locations/v1/cities/autocomplete
