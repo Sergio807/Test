@@ -2,8 +2,8 @@ package lesson7.project;
 
 import java.io.IOException;
 
-public class WeatherModel {
-    void getWeather(String selectedCity, Period period) throws IOException {
+public interface WeatherModel {
+    void getWeather(String selectedCity, Period period) throws IOException;
 
-    }
+    public List<Weather> getSavedToDBWeather();
 }
